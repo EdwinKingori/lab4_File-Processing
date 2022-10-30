@@ -20,19 +20,47 @@ def main():
         print(f"{i} \t {i**2} \t  {math.sqrt(i):.3f}", file = infile)
 
     infile.close()
-    print("Assignment complete, GODAMN!")
+    print("Assignment complete!")
         
  
 main()
 
-# opening and reading the contents of file created above.
+# 1B opening and reading the contents of file created above.
 
 def read_numbers():
     my_file = open("number.txt", "r")
     content = my_file.read()
     print(content)
-
+ 
     my_file.close()
 
 read_numbers ()
 
+# 2,3 & 4B Reading the whole file into a list using readlines()
+
+def read_numbers2():
+    my_file = open("number.txt", "r")
+    #lines = my_file.readlines()
+    #print (lines)
+    
+    for i in range(10):
+        s = my_file.readline()
+        print(s[:-1]) # fixing the spaces between the lines  using the slicing method
+
+    my_file.close()
+
+read_numbers2()
+
+
+
+def read_numbers3():
+    infile = open("number.txt", "r")
+    
+    #lines = infile.readlines()
+    #for s in lines:
+    
+    for s in infile:
+        print(s[:-1])
+    infile.close()
+
+read_numbers3()
